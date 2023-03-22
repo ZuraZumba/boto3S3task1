@@ -73,11 +73,9 @@ def create_policy(aws_s3_client, bucket_name):
         print("იქმნება...")
 
         aws_s3_client.put_bucket_policy(
-            Bucket=bucket_name,
-            Policy=policy_string
+            Bucket=bucket_name, Policy=policy_string
         )
         print("შეიქმნა")
-        print("new policy", policy_exists(aws_s3_client, bucket_name))
     except ClientError as e:
         logging.error(e)
         return False
