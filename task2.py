@@ -45,8 +45,8 @@ def policy_exists(aws_s3_client,bucket_name):
         logging.error(e)
         return False
 
-    status_code = response["ResponseMetadata"]["HTTPStatusCode"]
-    if status_code == 200:
+    status = response["ResponseMetadata"]["HTTPStatusCode"]
+    if status == 200:
         return response
     return False
 
